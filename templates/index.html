@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<title>Credit Card Fraud Detection</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0;
+}
+
+.container{
+    background:white;
+    padding:40px;
+    border-radius:12px;
+    width:350px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    text-align:center;
+}
+
+h1{
+    color:#333;
+    margin-bottom:25px;
+}
+
+input{
+    width:90%;
+    padding:12px;
+    margin:10px 0;
+    border-radius:6px;
+    border:1px solid #ccc;
+    font-size:14px;
+}
+
+input:focus{
+    border-color:#667eea;
+    outline:none;
+}
+
+button{
+    background:#667eea;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    font-size:16px;
+    border-radius:6px;
+    cursor:pointer;
+    margin-top:10px;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#5a67d8;
+}
+
+.result{
+    margin-top:20px;
+    font-size:18px;
+    font-weight:bold;
+    color:#333;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>💳 Fraud Detection</h1>
+
+<form action="/predict" method="post">
+
+<input type="number" name="hour" placeholder="Transaction Hour (0-23)" required>
+
+<input type="number" name="amount" placeholder="Transaction Amount" required>
+
+<input type="text" name="location" placeholder="Enter Location (City)" required>
+
+<br>
+
+<button type="submit">Check Transaction</button>
+
+</form>
+
+<div class="result">
+{{ prediction_text }}
+</div>
+
+</div>
+
+</body>
+</html>
